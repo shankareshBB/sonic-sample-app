@@ -1,0 +1,24 @@
+{
+  "name": "sample-iri-widgets-meetup",
+  "version": "1.0.0",
+  "description": "sample app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "pm2": "pm2 start server.js --name iri-widgets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shankareshBB/iri-sample-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shankareshBB/iri-sample-app/issues"
+  },
+  "homepage": "https://github.com/shankareshBB/iri-sample-app#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
