@@ -114,7 +114,6 @@
         <!-- Start: Speakers -->
         <div class="row me-row content-ct speaker" id="speakers" style="">
           <h2 class="row-title">Meet the our architect</h2>
-
           <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
           <div class="col-md-4 col-sm-6 feature">
             <img src="img/speaker-5.png" class="speaker-img">
@@ -139,15 +138,6 @@
         </div>
         </div>
         <!-- End: Speakers -->
-      </div>
-      
-      <div>
-        <br/>
-        <br/>
-        <div style="display: flex; justify-content: center; align-items: center;">
-          
-          <div id="iri-embedded-verify" style="width: 600px;"></div>
-        </div>
       </div>
 
       <!-- Start: Schedule -->
@@ -350,6 +340,8 @@
       </div> -->
       <!-- End: Schedule -->
 
+      <div id="sonic-web-widget"></div>
+      
       <!-- Start: Footer -->
       <div class="container-fluid footer">
         <div class="row contact" id="configuration">
@@ -544,7 +536,7 @@
       </div>
       <!-- End: Footer -->
 
-      <div id="sonic-web-widget"></div>
+    
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="js/jquery.min.js"></script>
@@ -625,7 +617,7 @@
           var doEle = document.getElementById("doBtn");
           var configForm = document.getElementById("configuration");
           doEle.addEventListener("click", function() {
-            configForm.scrollIntoView({ behavior: 'smooth', block: 'end'});
+            configForm.scrollIntoView({ behavior: 'smooth' }); //, block: 'end'
           });
  
           var element = document.getElementById("useSonic");
@@ -633,7 +625,7 @@
 
          element.addEventListener("click", function () {
             // smooth scroll to element and align it at the bottom
-            eleDisplay.scrollIntoView({ behavior: 'smooth', block: 'end'});
+            eleDisplay.scrollIntoView({ behavior: 'smooth' }); //, block: 'end'
             // element.scrollIntoView();
             console.log({config});
             sonic.SonicWidget(config);
