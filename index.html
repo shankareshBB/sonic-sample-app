@@ -394,10 +394,8 @@
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
-            </div>
 
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-              <div class="form-group" style="padding: 20px; text-align: center;" >
+              <!-- <div class="form-group" style="padding: 20px; text-align: center;" >
                 <label for="readyApiKey" class="col-sm-3 control-label">READY API KEY<sup>*</sup></label>
                 <div class="col-sm-9" style="
                 padding-top: 5px;
@@ -413,8 +411,10 @@
                   <div class="help-block with-errors pull-right"></div>
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
-              </div>
- 
+              </div> -->
+            </div>
+
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
               <div class="form-group" style="padding: 20px; text-align: center;" >
                 <label for="accountId" class="col-sm-3 control-label">ACCOUNT ID<sup>*</sup></label>
                 <div class="col-sm-9" style="
@@ -432,6 +432,23 @@
                   <span class="form-control-feedback" aria-hidden="true"></span>
                 </div>
               </div>
+
+              <div class="form-group" style="padding: 20px; text-align: center;" >
+                <label for="applicationNo" class="col-sm-3 control-label">APPLICATION NO<sup>*</sup></label>
+                <div class="col-sm-9" style="
+                padding-top: 5px;
+            ">
+                  <input type="text" class="form-control" id="applicationNo" placeholder="applicationNo" value="" required 
+                  style="
+                  border: 0;
+                  outline: 0;
+                  padding: 1rem;
+                  min-width: 400px;
+                  border-radius: 8px;
+              ">
+                  <div class="help-block with-errors pull-right"></div>
+                  <span class="form-control-feedback" aria-hidden="true"></span>
+                </div>
             </div>
             
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -510,24 +527,9 @@
               </div>
             </div>
             
-            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-              <div class="form-group" style="padding: 20px; text-align: center;" >
-                <label for="applicationNo" class="col-sm-3 control-label">APPLICATION NO<sup>*</sup></label>
-                <div class="col-sm-9" style="
-                padding-top: 5px;
-            ">
-                  <input type="text" class="form-control" id="applicationNo" placeholder="applicationNo" value="" required 
-                  style="
-                  border: 0;
-                  outline: 0;
-                  padding: 1rem;
-                  min-width: 400px;
-                  border-radius: 8px;
-              ">
-                  <div class="help-block with-errors pull-right"></div>
-                  <span class="form-control-feedback" aria-hidden="true"></span>
-                </div>
-              </div>
+            <!-- <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+              
+              </div> -->
 
               <!-- <div class="form-group" style="padding: 20px;" >
                 <label for="changeToPopupSR"  class="checkbox-container">Change To Popup for Self Register
@@ -552,7 +554,7 @@
       <script src="js/scrolling-nav.js"></script>
       <script src="js/validator.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/sonic-widget@1.0.1/dist/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sonic-widget@1.0.2/dist/index.min.js"></script>
     
       <script>
         // var rainbowStyle = "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113); margin-bottom: 12px; padding: 3%";
@@ -571,7 +573,6 @@
          var config = {
             baseurl: document.getElementById("baseurl").value,
             ipInfoKey: document.getElementById("ipInfoKey").value, 
-            readyApiKey: document.getElementById("readyApiKey").value,
             showPage: true,
             changeToPopup: true, //document.getElementById("changeToPopup").checked
             accountId: document.getElementById("accountId").value, //"DF2E1D5F-34A3-4B3F-B792-B5A14A49AE20",
@@ -594,9 +595,9 @@
          document.getElementById("ipInfoKey").onchange = function() {
             config.ipInfoKey = document.getElementById("ipInfoKey").value;
          };
-         document.getElementById("readyApiKey").onchange = function() {
-            config.readyApiKey = document.getElementById("readyApiKey").value;
-         };
+        //  document.getElementById("readyApiKey").onchange = function() {
+        //     config.readyApiKey = document.getElementById("readyApiKey").value;
+        //  };
 
          document.getElementById("accountId").onchange = function() {
             config.accountId = document.getElementById("accountId").value;
@@ -620,20 +621,20 @@
          // document.getElementById("changeToPopup").onchange = function() {
          //    config.baseurl = document.getElementById("changeToPopup").checked;
          // };
-            console.log({sonic})
 
-            var doEle = document.getElementById("doBtn");
-            var configForm = document.getElementById("configuration");
-            doEle.addEventListener("click", function() {
-              configForm.scrollIntoView({ behavior: 'smooth', block: 'end'});
-            });
+          var doEle = document.getElementById("doBtn");
+          var configForm = document.getElementById("configuration");
+          doEle.addEventListener("click", function() {
+            configForm.scrollIntoView({ behavior: 'smooth', block: 'end'});
+          });
  
-         var element = document.getElementById("useSonic");
+          var element = document.getElementById("useSonic");
+          var eleDisplay = document.getElementById("sonic-web-widget");
+
          element.addEventListener("click", function () {
             // smooth scroll to element and align it at the bottom
-            element.scrollIntoView({ behavior: 'smooth', block: 'end'});
+            eleDisplay.scrollIntoView({ behavior: 'smooth', block: 'end'});
             // element.scrollIntoView();
-
             console.log({config});
             sonic.SonicWidget(config);
          });
