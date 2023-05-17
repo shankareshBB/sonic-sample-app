@@ -1,23 +1,23 @@
 {
-  "name": "sample-iri-widgets-meetup",
+  "name": "sample-sonic-widgets",
   "version": "1.0.0",
   "description": "sample app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "pm2": "pm2 start server.js --name iri-widgets"
+    "pm2": "pm2 start server.js --name sonic-widgets"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shankareshBB/iri-sample-app.git"
+    "url": "git+https://github.com/shankareshBB/sonic-sample-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shankareshBB/iri-sample-app/issues"
+    "url": "https://github.com/shankareshBB/sonic-sample-app/issues"
   },
-  "homepage": "https://github.com/shankareshBB/iri-sample-app#readme",
+  "homepage": "https://github.com/shankareshBB/sonic-sample-app#readme",
   "dependencies": {
     "express": "^4.18.2"
   }

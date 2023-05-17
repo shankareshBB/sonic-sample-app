@@ -7,4 +7,4 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.listen(5464,() =>{console.log("IRI Sample App Running on 5464")})
+app.listen(4040,() =>{console.log("Sonic Sample App Running on 4040")})
