@@ -356,7 +356,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="baseurl" placeholder="baseurl" value='https://access.axiomprotect.com:6653/AxiomProtect/v1/WD/sonicKYC' required 
+                  <input type="text" class="form-control" id="baseurl" placeholder="baseurl" value='https://access.axiomprotect.com:6653/AxiomProtect/v1/WD/sonicKYC' maxLength={50} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -374,7 +374,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="ipInfoKey" placeholder="ipInfoKey" value="7fad2ae03df88a" required 
+                  <input type="text" class="form-control" id="ipInfoKey" placeholder="ipInfoKey" value="7fad2ae03df88a" maxLength={15} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -412,7 +412,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="" required 
+                  <input type="text" class="form-control" id="accountId" placeholder="accountId" value="" maxLength={35} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -430,7 +430,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="applicationNo" placeholder="applicationNo" value="" required 
+                  <input type="text" class="form-control" id="applicationNo" placeholder="applicationNo" value="" maxLength={25} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -450,7 +450,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="userId" placeholder="userId" value="" required 
+                  <input type="text" class="form-control" id="userId" placeholder="userId" value="" maxLength={25} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -468,7 +468,7 @@
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="userName" placeholder="userName" value="" required 
+                  <input type="text" class="form-control" id="userName" placeholder="userName" value="" maxLength={25} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -484,11 +484,11 @@
             
             <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
               <div class="form-group" style="padding: 20px; text-align: center;" >
-                <label for="email" class="col-sm-3 control-label">EMAIL<sup>*</sup></label>
+                <label for="email" class="col-sm-3 control-label">EMAIL (optional) </label>
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="email" placeholder="email" value="" required 
+                  <input type="email" class="form-control" id="email" placeholder="email" value="" maxLength={40} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -502,11 +502,11 @@
               </div>
               
               <div class="form-group" style="padding: 20px; text-align: center;" >
-                <label for="phone" class="col-sm-3 control-label">PHONE<sup>*</sup></label>
+                <label for="phone" class="col-sm-3 control-label">PHONE (optional) </label>
                 <div class="col-sm-9" style="
                 padding-top: 5px;
             ">
-                  <input type="text" class="form-control" id="phone" placeholder="phone" value="" required 
+                  <input type="text" class="form-control" id="phone" placeholder="phone" value="" maxLength={10} required 
                   style="
                   border: 0;
                   outline: 0;
@@ -546,7 +546,7 @@
       <script src="js/scrolling-nav.js"></script>
       <script src="js/validator.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/sonic-widget@1.0.2/dist/index.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sonic-widget@1.0.3/dist/index.min.js"></script>
     
       <script>
         // var rainbowStyle = "font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113); margin-bottom: 12px; padding: 3%";
@@ -580,34 +580,42 @@
            },
          };
          
-         document.getElementById("baseurl").onchange = function() {
-            config.baseurl = document.getElementById("baseurl").value;
+         document.getElementById("baseurl").onchange = function() { 
+            this.value = this.value.substring(0, 50);
+            config.baseurl = this.value.substring(0, 50);
          };
          
          document.getElementById("ipInfoKey").onchange = function() {
-            config.ipInfoKey = document.getElementById("ipInfoKey").value;
+            this.value = this.value.substring(0, 15);
+            config.ipInfoKey = this.value.substring(0, 15);
          };
         //  document.getElementById("readyApiKey").onchange = function() {
         //     config.readyApiKey = document.getElementById("readyApiKey").value;
         //  };
 
          document.getElementById("accountId").onchange = function() {
-            config.accountId = document.getElementById("accountId").value;
+            this.value = this.value.substring(0, 35);
+            config.accountId = this.value.substring(0, 35);
          };
          document.getElementById("userId").onchange = function() {
-            config.userId = document.getElementById("userId").value;
+            this.value = this.value.substring(0, 25);
+            config.userId = this.value.substring(0, 25);
          };
          document.getElementById("userName").onchange = function() {
-            config.userName = document.getElementById("userName").value;
+            this.value = this.value.substring(0, 25);
+            config.userName = this.value.substring(0, 25);
          };
          document.getElementById("email").onchange = function() {
-            config.email = document.getElementById("email").value;
+            this.value = this.value.substring(0, 40);
+            config.email = this.value.substring(0, 40);
          };
          document.getElementById("phone").onchange = function() {
-            config.phone = document.getElementById("phone").value;
+            this.value = this.value.substring(0, 10);
+            config.phone = this.value.substring(0, 10);
          };
          document.getElementById("applicationNo").onchange = function() {
-            config.applicationNo = document.getElementById("applicationNo").value;
+            this.value = this.value.substring(0, 25);
+            config.applicationNo = this.value.substring(0, 25);
          };
 
          // document.getElementById("changeToPopup").onchange = function() {
